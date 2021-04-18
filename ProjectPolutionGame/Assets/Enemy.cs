@@ -22,7 +22,10 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-        
+
+
+
+
     void Die()
     {
         //Instantiate(deathEffect, transform.position, Quaternion.identity);
