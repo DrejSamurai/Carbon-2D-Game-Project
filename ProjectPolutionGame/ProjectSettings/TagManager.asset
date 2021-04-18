@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Sky
+  - Enemy
   layers:
   - Default
   - TransparentFX
