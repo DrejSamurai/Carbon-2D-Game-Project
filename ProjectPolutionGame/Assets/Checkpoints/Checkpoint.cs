@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private GameMaster gm;
+    public Vector2 firstCheckPointPostion;
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.Log("CheckPointTriggred!");
             gm.lastCheckPointPosition = transform.position;
+            gm.firstCheckPointPosition = firstCheckPointPostion;
+
         }
     }
 }

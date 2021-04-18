@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     private GameMaster gm;
+    public GameOver gameOver;
+    public static int Lives = 3;
+    
+   
     
     public HealthBar healthbar;
     // Start is called before the first frame update
@@ -16,6 +20,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        PlayerPrefs.GetInt("Lives");
         gm = GameObject.FindObjectOfType<GameMaster>();
         transform.position = gm.lastCheckPointPosition;
     }
@@ -34,6 +39,8 @@ public class Player : MonoBehaviour
 
     }
 
+    
+
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -43,10 +50,28 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
-        if (currentHealth == 0)
+        
+       
+        if (Lives == 0 )
         {
-            //Application.LoadLevel(Application.loadedLevel);          
+            PauseGame();
+            gameOver.Setup();
+            Lives = 3;
+        }
+        
+        if (currentHealth <= 0)
+        {
+            
+            PlayerPrefs.SetInt("Lives",Lives--);
+            //Application.LoadLevel(Application.loadedLevel);
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
-}
+
+    void PauseGame()
+        {
+            Time.timeScale = 0;
+        }
+    }

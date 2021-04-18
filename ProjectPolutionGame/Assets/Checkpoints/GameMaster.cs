@@ -6,6 +6,7 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
     public Vector2 lastCheckPointPosition;
+    public Vector2 firstCheckPointPosition;
     private void Awake()
     {
         if(instance == null)
