@@ -36,10 +36,6 @@ public class PlayerMovement : MonoBehaviour
             fire = false;
             animator.SetBool("IsShooting", false);
         }
-            
-        
-            
-        
     }
 
     public void onLanding()
@@ -63,4 +59,6 @@ public class PlayerMovement : MonoBehaviour
         fire = false;
 
     }
+
+  
 }
