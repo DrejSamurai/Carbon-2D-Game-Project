@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     private GameMaster gm;
     public GameOver gameOver;
     public static int Lives = 3;
-    
+    bool canTakeDmg = true;
+
    
     
     public HealthBar healthbar;
@@ -21,37 +22,53 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         PlayerPrefs.GetInt("Lives");
+
         gm = GameObject.FindObjectOfType<GameMaster>();
+        
         transform.position = gm.lastCheckPointPosition;
     }
 
-
-    // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D hitInfo)
+    void DamageCheck(int amount, string type, Collision2D hitInfo, bool waitTime = true)
     {
-        if (hitInfo.gameObject.tag == "Enemy")
+        if (hitInfo.gameObject.tag == type)
         {
-            TakeDamage(10);
+            if (canTakeDmg)
+            {
+                if(waitTime) StartCoroutine(WaitForSeconds());
+                TakeDamage(amount);
+            }
         }
-        if(hitInfo.gameObject.tag == "EnemyPatrol")
-        {
-            TakeDamage(5);
-        }
-        if(hitInfo.gameObject.tag == "Flying Enemy")
-        {
-            TakeDamage(15);
-        }
-        if(hitInfo.gameObject.tag == "Instant Death")
-        {
-            TakeDamage(100);
-        }
-
-        Death();
-        
-
     }
 
-    
+    void CollisionDetection(Collision2D hitInfo)
+    {
+        DamageCheck(10, "Enemy", hitInfo);
+        DamageCheck(10, "EnemyPatrol", hitInfo);
+        DamageCheck(15, "Flying Enemy", hitInfo);
+        DamageCheck(100, "Instant Death", hitInfo, false);
+        Death();
+    }
+
+    // Update is called once per frame
+    void OnCollisionStay2D(Collision2D hitInfo)
+    {
+        CollisionDetection(hitInfo);
+    }
+
+    void OnCollisionEnter2D(Collision2D hitInfo)
+    {
+        CollisionDetection(hitInfo);
+    }
+
+
+    IEnumerator WaitForSeconds()
+    {
+        canTakeDmg = false;
+        yield return new WaitForSecondsRealtime(1);
+        canTakeDmg = true;
+    }
+
+
 
     void TakeDamage(int damage)
     {
@@ -74,11 +91,8 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             
-            PlayerPrefs.SetInt("Lives",Lives--);
-            //Application.LoadLevel(Application.loadedLevel);
-
+            PlayerPrefs.SetInt("Lives", --Lives);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
         }
     }
 
