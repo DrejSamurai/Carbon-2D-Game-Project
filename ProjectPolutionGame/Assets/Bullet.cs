@@ -19,14 +19,19 @@ public class Bullet : MonoBehaviour
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         Patrol patrol = hitInfo.GetComponent<Patrol>();
+        FlyingEnemy bird = hitInfo.GetComponent<FlyingEnemy>();
 
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
         }
-        if(patrol != null)
+        if (patrol != null)
         {
             patrol.TakeDamage(damage);
+        }
+        if (bird != null)
+        {
+            bird.TakeDamage(damage);
         }
         Destroy(gameObject);
     }

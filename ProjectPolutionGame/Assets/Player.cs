@@ -37,6 +37,10 @@ public class Player : MonoBehaviour
         {
             TakeDamage(5);
         }
+        if(hitInfo.gameObject.tag == "Flying Enemy")
+        {
+            TakeDamage(15);
+        }
 
         Death();
         
