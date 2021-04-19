@@ -9,6 +9,7 @@ TagManager:
   - Platform
   - EnemyPatrol
   - Flying Enemy
+  - Instant Death
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemy
   - EnemyPatrol
   - Flying enemy
-  - 
+  - Instant Death
   - 
   - 
   - 

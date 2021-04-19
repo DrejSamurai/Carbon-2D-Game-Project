@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
         {
             TakeDamage(15);
         }
+        if(hitInfo.gameObject.tag == "Instant Death")
+        {
+            TakeDamage(100);
+        }
 
         Death();
         
