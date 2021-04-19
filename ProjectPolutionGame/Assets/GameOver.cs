@@ -7,20 +7,20 @@ public class GameOver : MonoBehaviour
 {
     public Vector2 firstCheckpointPos;
     private GameMaster gm;
+    
+    public Player player;
     public void Setup()
     {
         gameObject.SetActive(true);
+        
     }
 
 
     public void RestartButton()
     {
         Time.timeScale = 1;
-        //SceneManager.LoadScene("GameLevel1");
-        //Application.LoadLevel(Application.loadedLevel);
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+        player.transform.position = firstCheckpointPos;
+        gameObject.SetActive(false);
     }
 
     public void ExitButton()

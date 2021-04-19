@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public GameOver gameOver;
     public static int Lives = 3;
     bool canTakeDmg = true;
+    
 
    
     
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
         {
             
             PlayerPrefs.SetInt("Lives", --Lives);
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
