@@ -33,6 +33,10 @@ public class Player : MonoBehaviour
         {
             TakeDamage(10);
         }
+        if(hitInfo.gameObject.tag == "EnemyPatrol")
+        {
+            TakeDamage(5);
+        }
 
         Death();
         

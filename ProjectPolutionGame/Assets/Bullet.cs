@@ -18,12 +18,21 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if(enemy != null)
+        Patrol patrol = hitInfo.GetComponent<Patrol>();
+
+        if (enemy != null)
         {
             enemy.TakeDamage(damage);
+        }
+        if(patrol != null)
+        {
+            patrol.TakeDamage(damage);
         }
         Destroy(gameObject);
     }
 
     
+
+
+
 }
