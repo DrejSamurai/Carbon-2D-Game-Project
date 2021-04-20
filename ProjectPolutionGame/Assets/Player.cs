@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int currentHealth;
     private GameMaster gm;
     public GameOver gameOver;
+    public EscBackground esc;
     public static int Lives = 3;
     bool canTakeDmg = true;
     
@@ -98,8 +99,11 @@ public class Player : MonoBehaviour
         }
     }
 
+   
+    
     void PauseGame()
         {
+      
             Time.timeScale = 0;
         }
     }
