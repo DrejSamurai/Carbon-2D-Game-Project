@@ -8,6 +8,7 @@ public class Patrol : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
     public int health = 100;
+    
 
     public Transform[] moveSpots;
     private int randomSpot;
@@ -51,6 +52,7 @@ public class Patrol : MonoBehaviour
 
     void Die()
     {
+        
        Destroy(gameObject, 1);
 
     }

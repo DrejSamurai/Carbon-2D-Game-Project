@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int currentHealth;
     private GameMaster gm;
     public GameOver gameOver;
-    public EscBackground esc;
+ 
     public static int Lives = 3;
     bool canTakeDmg = true;
     

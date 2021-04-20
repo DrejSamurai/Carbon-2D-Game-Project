@@ -6,6 +6,7 @@ public class FlyingEnemy : MonoBehaviour
 {
 
     public int health = 100;
+   
 
     public void TakeDamage(int damage)
     {

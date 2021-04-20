@@ -8,6 +8,8 @@ public class EscBackground : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public GameObject pause;
+    public AudioSource audioSource;
+
 
     public void Update()
     {
@@ -32,6 +34,7 @@ public class EscBackground : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        audioSource.Play();
         
     }
 
@@ -40,6 +43,7 @@ public class EscBackground : MonoBehaviour
         pause.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.Pause();
     }
     public void LoadMenu()
     {

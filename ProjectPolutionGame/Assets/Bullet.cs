@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
         {
             bird.TakeDamage(damage);
         }
+
         Destroy(gameObject);
     }
 

@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
-
-    //public GameObject deathEffect;
+    
     public Animator animator;
     
     
@@ -19,6 +18,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             animator.SetBool("IsDead", true);
+            
             Die();
         }
     }
@@ -33,6 +33,6 @@ public class Enemy : MonoBehaviour
         
         
         Destroy(gameObject,1);
-       
+        
     }
 }

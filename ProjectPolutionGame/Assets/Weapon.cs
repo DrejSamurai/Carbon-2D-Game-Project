@@ -6,6 +6,8 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public AudioSource effect;
+  
 
     // Update is called once per frame
     void Update()
@@ -21,6 +23,6 @@ public class Weapon : MonoBehaviour
     {
         //shooting logic
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
+        effect.Play();
     }
 }
