@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool fire = false;
 
+
+    
     // Update is called once per frame
     void Update()
     {
