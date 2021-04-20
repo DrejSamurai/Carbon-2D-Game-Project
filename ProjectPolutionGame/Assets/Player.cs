@@ -52,18 +52,6 @@ public class Player : MonoBehaviour
         Death();
     }
 
-    void HealthbarDetection(Collision2D hitInfo)
-    {
-        if(currentHealth < maxHealth)
-        {
-            if(hitInfo.gameObject.tag == "MedKit")
-            {
-                currentHealth += healAmountFromMedkit;
-                healthbar.SetHealth(currentHealth);
-                Destroy(GameObject.FindWithTag("MedKit"));             
-            }
-        }
-    }
 
     // Update is called once per frame
     void OnCollisionStay2D(Collision2D hitInfo)
@@ -74,7 +62,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
         CollisionDetection(hitInfo);
-        HealthbarDetection(hitInfo);
+        
     }
 
 

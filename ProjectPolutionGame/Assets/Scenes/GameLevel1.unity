@@ -2422,6 +2422,7 @@ GameObject:
   - component: {fileID: 597787457}
   - component: {fileID: 597787456}
   - component: {fileID: 597787455}
+  - component: {fileID: 597787458}
   m_Layer: 0
   m_Name: betterMEdKit (3)
   m_TagString: MedKit
@@ -2439,7 +2440,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07084274, y: 0.088552475}
@@ -2520,6 +2521,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597787458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597787454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b100a003c9eda34396ee2d2deaab7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 678561731}
+  healthBonus: 40
 --- !u!1 &606139560
 GameObject:
   m_ObjectHideFlags: 0
@@ -7593,6 +7608,7 @@ GameObject:
   - component: {fileID: 1630196554}
   - component: {fileID: 1630196553}
   - component: {fileID: 1630196552}
+  - component: {fileID: 1630196555}
   m_Layer: 0
   m_Name: betterMEdKit (1)
   m_TagString: MedKit
@@ -7610,7 +7626,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07084274, y: 0.088552475}
@@ -7691,6 +7707,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630196555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630196551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b100a003c9eda34396ee2d2deaab7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 678561731}
+  healthBonus: 40
 --- !u!1 &1634013015
 GameObject:
   m_ObjectHideFlags: 0
@@ -7947,6 +7977,7 @@ GameObject:
   - component: {fileID: 1712870439}
   - component: {fileID: 1712870438}
   - component: {fileID: 1712870437}
+  - component: {fileID: 1712870440}
   m_Layer: 0
   m_Name: betterMEdKit
   m_TagString: MedKit
@@ -7964,7 +7995,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07084274, y: 0.088552475}
@@ -8045,6 +8076,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712870440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712870436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b100a003c9eda34396ee2d2deaab7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 678561731}
+  healthBonus: 40
 --- !u!1 &1717788507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10109,6 +10154,7 @@ GameObject:
   - component: {fileID: 2043040553}
   - component: {fileID: 2043040552}
   - component: {fileID: 2043040551}
+  - component: {fileID: 2043040554}
   m_Layer: 0
   m_Name: betterMEdKit (2)
   m_TagString: MedKit
@@ -10126,7 +10172,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07084274, y: 0.088552475}
@@ -10207,6 +10253,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043040554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043040550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b100a003c9eda34396ee2d2deaab7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 678561731}
+  healthBonus: 40
 --- !u!1 &2060927225
 GameObject:
   m_ObjectHideFlags: 0
