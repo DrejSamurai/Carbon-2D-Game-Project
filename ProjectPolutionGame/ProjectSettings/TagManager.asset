@@ -10,6 +10,7 @@ TagManager:
   - EnemyPatrol
   - Flying Enemy
   - Instant Death
+  - MedKit
   layers:
   - Default
   - TransparentFX

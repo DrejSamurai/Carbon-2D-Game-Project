@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public int healAmountFromMedkit = 40;
     private GameMaster gm;
     public GameOver gameOver;
  
@@ -51,10 +52,25 @@ public class Player : MonoBehaviour
         Death();
     }
 
+    void HealthbarDetection(Collision2D hitInfo)
+    {
+        if(currentHealth < maxHealth)
+        {
+            if(hitInfo.gameObject.tag == "MedKit")
+            {
+                currentHealth += healAmountFromMedkit;
+                healthbar.SetHealth(currentHealth);
+                 Destroy(GameObject.FindWithTag("MedKit"));
+                
+            }
+        }
+    }
+
     // Update is called once per frame
     void OnCollisionStay2D(Collision2D hitInfo)
     {
         CollisionDetection(hitInfo);
+        HealthbarDetection(hitInfo);
     }
 
     void OnCollisionEnter2D(Collision2D hitInfo)
@@ -69,6 +85,8 @@ public class Player : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         canTakeDmg = true;
     }
+
+  
 
 
 
