@@ -60,8 +60,7 @@ public class Player : MonoBehaviour
             {
                 currentHealth += healAmountFromMedkit;
                 healthbar.SetHealth(currentHealth);
-                 Destroy(GameObject.FindWithTag("MedKit"));
-                
+                Destroy(GameObject.FindWithTag("MedKit"));             
             }
         }
     }
@@ -69,13 +68,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void OnCollisionStay2D(Collision2D hitInfo)
     {
-        CollisionDetection(hitInfo);
-        HealthbarDetection(hitInfo);
+        CollisionDetection(hitInfo);      
     }
 
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
         CollisionDetection(hitInfo);
+        HealthbarDetection(hitInfo);
     }
 
 
