@@ -9,9 +9,9 @@ public class LevelLoader : MonoBehaviour
     public Slider slider;
     public Text progressText;
 
-    public void LoadLevel(int sceneIndex)
+    public void LoadLevel()
     {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        StartCoroutine(LoadAsynchronously(3));
 
     }
 
