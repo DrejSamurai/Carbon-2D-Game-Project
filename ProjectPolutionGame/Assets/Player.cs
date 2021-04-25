@@ -7,29 +7,42 @@ public class Player : MonoBehaviour
 {
 
     public int maxHealth = 100;
+    public int maxOxygen = 100;
     public int currentHealth;
+    public int currentOxygen;
     public int healAmountFromMedkit = 40;
     private GameMaster gm;
     public GameOver gameOver;
+
  
     public static int Lives = 3;
     bool canTakeDmg = true;
-    
+    bool oxygenDamage = true;
 
    
     
     public HealthBar healthbar;
+    public OxygenBar oxygenBar;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        currentOxygen = maxOxygen;
         healthbar.SetMaxHealth(maxHealth);
+        oxygenBar.SetMaxOxygen(maxOxygen);
         PlayerPrefs.GetInt("Lives");
 
         gm = GameObject.FindObjectOfType<GameMaster>();
         
         transform.position = gm.lastCheckPointPosition;
+        
+
     }
+
+    
+    
+
+    
 
     void DamageCheck(int amount, string type, Collision2D hitInfo, bool waitTime = true)
     {
@@ -39,6 +52,21 @@ public class Player : MonoBehaviour
             {
                 if(waitTime) StartCoroutine(WaitForSeconds());
                 TakeDamage(amount);
+                
+            }
+        }
+        
+    }
+
+    void OxygenDamageCheck(string type, int amount, Collision2D hitInfo, bool waitTime = true)
+    {
+        if (hitInfo.gameObject.tag == type)
+        {
+            if (oxygenDamage)
+            {
+                if (waitTime) StartCoroutine(WaitForSeconds());
+                OxygenDamage(amount);
+
             }
         }
     }
@@ -52,8 +80,10 @@ public class Player : MonoBehaviour
         Death();
     }
 
+   
 
-    // Update is called once per frame
+
+    
     void OnCollisionStay2D(Collision2D hitInfo)
     {
         CollisionDetection(hitInfo);      
@@ -62,8 +92,10 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
         CollisionDetection(hitInfo);
+       
         
     }
+    
 
 
     IEnumerator WaitForSeconds()
@@ -73,7 +105,20 @@ public class Player : MonoBehaviour
         canTakeDmg = true;
     }
 
+    IEnumerator WaitForOxygen()
+    {
+        oxygenDamage = false;
+        yield return new WaitForSecondsRealtime(1);
+        oxygenDamage = true;
+
+    }
+
   
+    void OxygenDamage(int amount)
+    {
+        currentOxygen -= amount;
+        oxygenBar.SetOxygen(currentOxygen);
+    }
 
 
 

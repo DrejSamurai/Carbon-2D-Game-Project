@@ -11,6 +11,7 @@ TagManager:
   - Flying Enemy
   - Instant Death
   - MedKit
+  - CloudGas
   layers:
   - Default
   - TransparentFX
