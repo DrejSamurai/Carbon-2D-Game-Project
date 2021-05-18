@@ -11,9 +11,15 @@ Carbon е проект за предметот Медиуми и комуник�
 
 ## Како се симнува
 Download link: https://drive.google.com/file/d/19rovimZfjYnOdPIHRg_CNcA7JTFqtX4t/view
+
 Музика во менито : https://www.youtube.com/watch?v=4l_PxLFbdHQ
+
 Музика во двете сцени(cutscenes) : https://www.youtube.com/watch?v=Ddrs6FXIJ-g
+
 Музика во првиот дел од првото ниво : https://www.youtube.com/watch?v=x74grrke9qE
+
 Музика во вториот дел од првото ниво : https://www.youtube.com/watch?v=oOBP9Y8wux0
+
 Game Over Музика : https://www.youtube.com/watch?v=br3OzOrARh4
+
 Shooting Sound Effect : https://www.youtube.com/watch?v=niKwTXI5TLo
